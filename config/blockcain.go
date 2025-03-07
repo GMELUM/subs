@@ -17,9 +17,4 @@ var (
     // These words are retrieved from the environment variable "BLOCKCHAIN_WORDS",
     // split by commas. If the environment variable is not set, it defaults to an empty slice.
     BlockchainWords = env.GetEnvArrayString("BLOCKCHAIN_WORDS", ",", []string{})
-
-    // WalletDestination specifies the recipient wallet address for transactions.
-    // This value is retrieved from the environment variable "WALLET_DESTINATION".
-    // If the environment variable is not set, it defaults to an empty string.
-    WalletDestination = env.GetEnvString("WALLET_DESTINATION", "")
 )
