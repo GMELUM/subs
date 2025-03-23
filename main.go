@@ -86,26 +86,26 @@ func init() {
 	// Load environment variables from a .env file if it exists, skip if not found
 	_ = godotenv.Load()
 
-	w, err = wallet.New(config.BlockchainWords, config.BlockchainNetwork)
-	if err != nil {
-		panic(err.Error())
-	}
-
-	s, err = tonsub.New(config.BlockchainWallet, config.BlockchainNetwork)
-	if err != nil {
-		panic(err.Error())
-	}
-
 	o, err = queue.New(queue.Config{
-		LocalFile: "_events",
+		LocalFile: fmt.Sprintf("%v%v", config.Volume, "_events"),
 	})
 	if err != nil {
 		panic(err.Error())
 	}
 
 	i, err = queue.New(queue.Config{
-		LocalFile: "_success",
+		LocalFile: fmt.Sprintf("%v%v", config.Volume, "_success"),
 	})
+	if err != nil {
+		panic(err.Error())
+	}
+
+	w, err = wallet.New(config.BlockchainWords, config.BlockchainNetwork)
+	if err != nil {
+		panic(err.Error())
+	}
+
+	s, err = tonsub.New(config.BlockchainWallet, config.BlockchainNetwork)
 	if err != nil {
 		panic(err.Error())
 	}
