@@ -53,9 +53,10 @@ func successSendNFT(data models.DecodeData) error {
 
 	// Execute callback REST request with the success NFT details.
 	result, err := utils.CallbackREST(config.CallbackURL, models.SuccessfulNFT{
-		Type:    "success_send_nft",
-		Address: nft.Address,
-		TxHash:  nft.TxHash,
+		Type:         "success_send_nft",
+		Address:      nft.Address,
+		OwnerAddress: nft.OwnerAddress,
+		TxHash:       nft.TxHash,
 	})
 
 	if err != nil {
@@ -87,6 +88,7 @@ func receivedNFT(data models.DecodeData) error {
 	// Execute callback REST request with the received NFT details including metadata.
 	result, err := utils.CallbackREST(config.CallbackURL, models.ReceivedNFT{
 		Type:       data.Type,
+		Sender:     data.Sender,
 		Address:    nft.Address,
 		Owner:      nft.OwnerAddress,
 		Collection: nft.CollectionAddress,

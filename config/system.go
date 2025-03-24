@@ -3,6 +3,11 @@ package config
 import "subs/utils/env"
 
 var (
+	// Volume defines the base directory path for storing files or assets.
+	// It retrieves the path from the environment variable "VOLUME".
+	// If "VOLUME" is not set, it defaults to "./".
+	Volume = env.GetEnvString("VOLUME", "./")
+
 	// Port defines the port number on which the server will listen.
 	// This value is retrieved from the environment variable "PORT".
 	// If the environment variable is not set, it defaults to 18300.
@@ -15,7 +20,7 @@ var (
 
 	// Secret is used for security purposes, such as signing tokens or encrypting sensitive data.
 	// This value is retrieved from the environment variable "SECRET".
-	// If the environment variable is not set, it defaults to a predefined string.
+	// If the environment variable is not set, it defaults to an empty string.
 	Secret = env.GetEnvString("SECRET", "")
 
 	// CallbackURL is used to specify the URL to which callbacks should be sent.

@@ -17,6 +17,8 @@ github.com/elum-utils/queue v0.0.2 h1:2xfoe8PYqVxbRHSe6+We4cL2e0aSKdjVMPtktMjMCs
 github.com/elum-utils/queue v0.0.2/go.mod h1:EB7a62zHggfsl2Z8OvlqsXI8lE18c7sa2bXZFKqeWdY=
 github.com/elum-utils/tonsub v0.0.3 h1:1wCsDp7R9BdOP+syQxCI08HLIJbt7QowsCUbXzVPQIo=
 github.com/elum-utils/tonsub v0.0.3/go.mod h1:hh1BZfLiAJyOydEnlfgyqf0MEqxE9MOxWSxoWColCug=
+github.com/elum-utils/tonsub v0.0.5 h1:OsctUuuVRDXGocfm2dQjqyOnc4jtt+S2A6BkxUlYpv4=
+github.com/elum-utils/tonsub v0.0.5/go.mod h1:hh1BZfLiAJyOydEnlfgyqf0MEqxE9MOxWSxoWColCug=
 github.com/elum-utils/wallet v0.0.1 h1:UP1AErdxWus7QFKSBIif1KTGsyvlr6u/dnohznnXnos=
 github.com/elum-utils/wallet v0.0.1/go.mod h1:ez91cBYXTJElkymwK95weYkJJid/XQPhbVHCCj322Dk=
 github.com/elum-utils/wallet v0.0.2 h1:Ne2XyFzbuHeiQA+4C16dHsihQ1ckoFyZCfaZqZ7AWuo=

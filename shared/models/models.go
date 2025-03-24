@@ -3,18 +3,21 @@ package models
 import "encoding/json"
 
 type DecodeData struct {
-	Type string          `json:"type"`
-	Data json.RawMessage `json:"data"`
+	Type   string          `json:"type"`
+	Sender string          `json:"sender"`
+	Data   json.RawMessage `json:"data"`
 }
 
 type EncodeData struct {
-	Type string `json:"type"`
-	Data any    `json:"data"`
+	Type   string `json:"type"`
+	Sender string `json:"sender"`
+	Data   any    `json:"data"`
 }
 
 // ReceivedNFT represents the transaction data for receiving an NFT [callback > server]
 type ReceivedNFT struct {
-	Type       string         `json:"type"`       // Event type
+	Type       string         `json:"type"` // Event type
+	Sender     string         `json:"sender"`
 	Address    string         `json:"address"`    // NFT address
 	Owner      string         `json:"owner"`      // NFT owner's address
 	Collection string         `json:"collection"` // NFT collection address
@@ -33,7 +36,8 @@ type SendNFT struct {
 
 // SuccessfulNFT represents the transaction data for a successful NFT sending [callback > server]
 type SuccessfulNFT struct {
-	Type    string `json:"type"`    // Event type
-	Address string `json:"address"` // NFT address
-	TxHash  string `json:"tx_hash"` // Transaction hash
+	Type         string `json:"type"`          // Event type
+	Address      string `json:"address"`       // NFT address
+	OwnerAddress string `json:"owner_address"` // NFT address
+	TxHash       string `json:"tx_hash"`       // Transaction hash
 }

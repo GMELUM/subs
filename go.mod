@@ -49,5 +49,5 @@ require (
 
 require (
 	github.com/elum-utils/queue v0.0.2
-	github.com/elum-utils/tonsub v0.0.3
+	github.com/elum-utils/tonsub v0.0.5
 )

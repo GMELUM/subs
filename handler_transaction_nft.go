@@ -17,8 +17,9 @@ func HandlerTransactionNFT(t *tonsub.RootNFT) {
 
 	// Prepare NFT data to add to the queue by marshaling it to JSON.
 	bytes, err := json.Marshal(models.EncodeData{
-		Type: "received_nft", // Set the type of data.
-		Data: t.Body,         // Include the NFT body data.
+		Type:   "received_nft", // Set the type of data.
+		Sender: t.SndrAddr,     //
+		Data:   t.Body,         // Include the NFT body data.
 	})
 	if err != nil {
 		// Exit if there is an error during marshaling.
