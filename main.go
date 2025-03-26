@@ -142,6 +142,7 @@ func main() {
 	}))
 
 	engine.POST("nft.send", middleware.Secret, HandlerNFTSend)
+	engine.GET("nft.info/:addr", HandlerNFTInfo)
 
 	// Attempt to run the server on the specified host and port.
 	// fmt.Sprintf is used to create a formatted string for the address.
