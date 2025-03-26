@@ -12,9 +12,17 @@ import (
 
 func HandlerNFTInfo(ctx *gin.Context) {
 
+	defer func(ctx *gin.Context) {
+		if r := recover(); r != nil {
+			ctx.String(http.StatusBadRequest, "invalid address")
+			ctx.Abort()
+			return
+		}
+	}(ctx)
+
 	addr := ctx.Params.ByName("addr")
 
-	if len(addr) != 32 {
+	if len(addr) < 32 {
 		ctx.String(http.StatusNotFound, "404 Not Found")
 		ctx.Abort()
 		return
